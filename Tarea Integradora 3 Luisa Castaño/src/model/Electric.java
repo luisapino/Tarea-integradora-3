@@ -6,27 +6,26 @@ public class Electric extends Car implements BatteryConsume{
     private double batteryDuration;
     private double batteryConsume;
     
-    public Electric(double basePrice, double sellPrice, String mark, String model, int cilinderCapacity,
-            double kilometers, String placa, OwnerCard ownerCard, int statusOption, Status status, SOAT soat,
-            Tehnomechanic tehnomechanic, int numDoor, boolean polarized, CarType theCarType, int typeCar,
-            TypeCharger typeCharger, double batteryDuration, double batteryConsume, int chargerOption) {
-        super(basePrice, sellPrice, mark, model, cilinderCapacity, kilometers, placa, ownerCard, statusOption, status,
-                soat, tehnomechanic, numDoor, polarized, theCarType, typeCar);
-        typeCharger = null;
-        switch(chargerOption){
-            case 1:{
-                typeCharger = TypeCharger.FAST;
-                break;
-            }
-            case 2:{
-                typeCharger = TypeCharger.NORMAL;
-                break;
-            }
-        }
+    public Electric(double basePrice, String mark, int model, int cilinderCapacity, double kilometers,
+            OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic, int numDoor,
+            boolean polarized, int typeCarOption, double batteryDuration, int chargerOption) {
+        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard, placa, statusOption, soat, tehnomechanic,
+                numDoor, polarized, typeCarOption);
+                switch(chargerOption){
+                    case 1:{
+                        typeCharger = TypeCharger.FAST;
+                        break;
+                    }
+                    case 2:{
+                        typeCharger = TypeCharger.NORMAL;
+                        break;
+                    }
+                }
+
         this.batteryDuration = batteryDuration;
         this.batteryConsume = calculateBatteryConsume();
     }
-    
+
     public TypeCharger getTypeCharger() {
         return typeCharger;
     }

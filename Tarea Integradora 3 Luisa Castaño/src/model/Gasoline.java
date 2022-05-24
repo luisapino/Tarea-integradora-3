@@ -6,13 +6,13 @@ public class Gasoline extends Car implements GasolineConsume{
     private GasolineType typeGasoline;
     
     public Gasoline(double basePrice, String mark, int model, int cilinderCapacity, double kilometers,
-    OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic, int numDoor,
-    boolean polarized, int typeCarOption, double gasolineCapacity2, int gasolineOption) {
-        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard , placa, statusOption,
-                soat, tehnomechanic, numDoor, polarized, typeCarOption);
+            OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic, int numDoor,
+            boolean polarized, int typeCarOption, double gasolineCapacity, int gasolineOption) {
+        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard, placa, statusOption, soat, tehnomechanic,
+                numDoor, polarized, typeCarOption);
         gasolineCapacity = basePrice;
         this.gasolineCapacity = gasolineCapacity;
-        this.gasolineConsume = gasolineConsume;
+        this.gasolineConsume = calculateGasolineConsume();
         typeGasoline = null;
         switch(gasolineOption){
             case 1:{

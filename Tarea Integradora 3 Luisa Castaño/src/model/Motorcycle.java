@@ -6,12 +6,11 @@ public class Motorcycle extends Vehicle implements GasolineConsume {
     private double gasolineConsume;
     private MotorcycleType motorcycleType;
 
-    public Motorcycle(double basePrice, double sellPrice, String mark, String model, int cilinderCapacity,
-            double kilometers, String placa, OwnerCard ownerCard, int statusOption, Status status, SOAT soat,
-            Tehnomechanic tehnomechanic, double gasolineCapacity, double gasolineConsume, int typeMotoOption,
-            MotorcycleType motorcycleType) {
-        super(basePrice, sellPrice, mark, model, cilinderCapacity, kilometers, placa, ownerCard, statusOption, status,
-                soat, tehnomechanic);
+    public Motorcycle(double basePrice, String mark, int model, int cilinderCapacity, double kilometers,
+            OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic,
+            double gasolineCapacity, int typeMotoOption) {
+        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard, placa, statusOption, soat,
+                tehnomechanic);
         this.gasolineCapacity = gasolineCapacity;
         this.gasolineConsume = calculateGasolineConsume();
         switch (typeMotoOption){

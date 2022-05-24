@@ -6,11 +6,11 @@ public class Car extends Vehicle {
     private boolean polarized;
     private CarType theCarType;
     
-    public Car(double basePrice, String mark, String model, int cilinderCapacity, double kilometers,
-             OwnerCard ownerCard,String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic,
-            int numDoor, boolean polarized, int typeCarOption) {
-        super(basePrice, mark, model, cilinderCapacity, kilometers, placa, ownerCard, statusOption,
-                soat, tehnomechanic);
+    public Car(double basePrice, String mark, int model, int cilinderCapacity, double kilometers,
+            OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic, int numDoor,
+            boolean polarized, int typeCarOption) {
+        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard, placa, statusOption, soat,
+                tehnomechanic);
         this.numDoor = numDoor;
         this.polarized = polarized;
         theCarType = null;
@@ -23,6 +23,7 @@ public class Car extends Vehicle {
                 theCarType = CarType.PICKUPTRUCK;
                 break;
             }
+
         }
     }
 

@@ -5,7 +5,7 @@ public class Vehicle {
     private double basePrice; 
     private double sellPrice;
     private String mark;
-    private String model;
+    private int model;
     private int cilinderCapacity;
     private double kilometers;
     private String placa;
@@ -14,7 +14,7 @@ public class Vehicle {
     private SOAT soat;
     private Tehnomechanic tehnomechanic;
     
-    public Vehicle(double basePrice, String mark, String model, int cilinderCapacity,
+    public Vehicle(double basePrice, String mark, int model, int cilinderCapacity,
             double kilometers, OwnerCard ownerCard,String placa, int statusOption, SOAT soat,
             Tehnomechanic tehnomechanic) {
         this.basePrice = basePrice;
@@ -26,10 +26,15 @@ public class Vehicle {
         this.placa = placa;
         this.ownerCard = ownerCard;
         status = null;
-        if(statusOption == 1){
+        switch(statusOption){
+            case 1:{
             status = Status.NEW;
-        }else if(statusOption == 2){
+            break;
+            }
+            case 2:{
             status = Status.USED;
+            break;
+            }
         }
         this.soat = soat;
         this.tehnomechanic = tehnomechanic;
@@ -43,7 +48,7 @@ public class Vehicle {
         this.basePrice = basePrice;
     }
 
-    public double getSellPrice() {
+    public double getSellPrice(double totBasePrice) {
         return sellPrice;
     }
 
@@ -59,11 +64,11 @@ public class Vehicle {
         this.mark = mark;
     }
 
-    public String getModel() {
+    public int getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(int model) {
         this.model = model;
     }
 

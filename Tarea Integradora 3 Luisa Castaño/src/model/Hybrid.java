@@ -9,17 +9,14 @@ public class Hybrid extends Car implements BatteryConsume, GasolineConsume{
     private double batterDuration;
     private double batteryConsume;
     
-    public Hybrid(double basePrice, double sellPrice, String mark, String model, int cilinderCapacity,
-            double kilometers, String placa, OwnerCard ownerCard, int statusOption, Status status, SOAT soat,
-            Tehnomechanic tehnomechanic, int numDoor, boolean polarized, CarType theCarType, int typeCarOption,
-            double gasolineCapacity, double gasolineConsume, GasolineType hybridTypeGasoline,
-            TypeCharger hybridTypeCharger, double batterDuration, double batteryConsume, int gasolineOption, int chargerOption) {
-        super(basePrice, sellPrice, mark, model, cilinderCapacity, kilometers, placa, ownerCard, statusOption, status,
-                soat, tehnomechanic, numDoor, polarized, theCarType, typeCarOption);
+    public Hybrid(double basePrice, String mark, int model, int cilinderCapacity, double kilometers,
+            OwnerCard ownerCard, String placa, int statusOption, SOAT soat, Tehnomechanic tehnomechanic, int numDoor,
+            boolean polarized, int typeCarOption, double gasolineCapacity, int gasolineOption, double batterDuration,
+            double batteryConsume, int chargerOption) {
+        super(basePrice, mark, model, cilinderCapacity, kilometers, ownerCard, placa, statusOption, soat, tehnomechanic,
+                numDoor, polarized, typeCarOption);
         this.gasolineCapacity = gasolineCapacity;
         this.gasolineConsume = calculateGasolineConsume();
-        this.hybridTypeGasoline = hybridTypeGasoline;
-        this.hybridTypeCharger = hybridTypeCharger;
         this.batterDuration = batterDuration;
         this.batteryConsume = calculateBatteryConsume();
         switch(gasolineOption){
